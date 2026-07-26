@@ -101,7 +101,7 @@ function Hero() {
   return (
     <section id="top" className="relative min-h-[100svh] overflow-hidden pt-24">
       <div className="absolute inset-0">
-        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/unnamed-3-24nxlEpWkg87JLb0TLetXnhMkxzq74.jpg" alt="Personal trainer in Bangalore" className="h-full w-full object-cover object-center" width={1600} height={1808} />
+        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/unnamed-KMrULCQ1nSfmIFpxvG9hkxfOmPP7vR.png" alt="Personal trainer in Bangalore" className="h-full w-full object-cover object-top" width={1600} height={1808} />
         <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent" />
       </div>
@@ -154,7 +154,7 @@ function About() {
       <div className="grid items-center gap-12 md:grid-cols-2 md:gap-20">
         <div className="relative order-2 md:order-1" data-reveal>
           <div className="relative overflow-hidden rounded-3xl border border-white/10">
-            <img src={trainerFlex.url} alt="Freelance Personal Trainer" className="h-[560px] w-full object-cover transition-transform duration-700 hover:scale-105" loading="lazy" />
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/unnamed-5-rvbAHGzaRHzwRIyTNe6P8uwmJhHh4A.jpg" alt="Freelance Personal Trainer" className="h-[560px] w-full object-cover transition-transform duration-700 hover:scale-105" loading="lazy" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent" />
           </div>
           <div className="absolute -bottom-6 -right-4 hidden rounded-2xl border border-white/10 bg-[#121212] p-5 shadow-2xl sm:block">
@@ -340,14 +340,14 @@ function Reviews() {
 
 function Gallery() {
   const imgs = [
-    { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/unnamed-4-Yz1GA0e5uRV7SM1sI73BDHGOKT78SW.jpg", h: "row-span-2" },
-    { src: g1, h: "" },
-    { src: g3, h: "" },
-    { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/unnamed-5-zOtONre1aPXSm6fA2XjbNfjLqJGCCA.jpg", h: "row-span-2" },
-    { src: g6, h: "" },
-    { src: g4, h: "" },
-    { src: g5, h: "" },
-    { src: g2, h: "" },
+    { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/unnamed-9SWdHcc3SxGamg9ijYKVhwvwfbyKHG.jpg", h: "row-span-2" },
+    { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/unnamed-yI3sYPCttna4u5fIFBevweXIiamAfl.jpg", h: "" },
+    { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/unnamed-KMrULCQ1nSfmIFpxvG9hkxfOmPP7vR.png", h: "" },
+    { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/unnamed-jocizJIXcie94JcYZT7LJavQ7Pn84F.jpg", h: "row-span-2" },
+    { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/unnamed-rvbAHGzaRHzwRIyTNe6P8uwmJhHh4A.jpg", h: "" },
+    { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/unnamed-X6ZH3mQfDSTYD4MRbCgNik7iAnYg1w.jpg", h: "" },
+    { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/unnamed-3-QqrZU2iAALEIUHdgRx5kExvIl9v5Aq.jpg", h: "" },
+    { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/unnamed-3-X6ZH3mQfDSTYD4MRbCgNik7iAnYg1w.jpg", h: "" },
   ];
   return (
     <Section id="gallery" className="bg-[#0a0a0a]">
