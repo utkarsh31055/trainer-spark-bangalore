@@ -101,7 +101,7 @@ function Hero() {
   return (
     <section id="top" className="relative min-h-[100svh] overflow-hidden pt-24">
       <div className="absolute inset-0">
-        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/unnamed-KMrULCQ1nSfmIFpxvG9hkxfOmPP7vR.png" alt="Personal trainer in Bangalore" className="h-full w-full object-cover object-top" width={1600} height={1808} />
+        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/unnamed-GIjtyQHPP1uolzHNYapoQzalPfwQgD.jpg" alt="Personal trainer in Bangalore" className="h-full w-full object-cover object-center" width={1600} height={1808} />
         <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent" />
       </div>
