@@ -342,11 +342,7 @@ function Gallery() {
   const imgs = [
     { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/unnamed-9SWdHcc3SxGamg9ijYKVhwvwfbyKHG.jpg", h: "row-span-2" },
     { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/unnamed-yI3sYPCttna4u5fIFBevweXIiamAfl.jpg", h: "" },
-    { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/unnamed-KMrULCQ1nSfmIFpxvG9hkxfOmPP7vR.png", h: "" },
-    { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/unnamed-jocizJIXcie94JcYZT7LJavQ7Pn84F.jpg", h: "row-span-2" },
-    { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/unnamed-rvbAHGzaRHzwRIyTNe6P8uwmJhHh4A.jpg", h: "" },
-    { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/unnamed-X6ZH3mQfDSTYD4MRbCgNik7iAnYg1w.jpg", h: "" },
-    { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/unnamed-3-QqrZU2iAALEIUHdgRx5kExvIl9v5Aq.jpg", h: "" },
+    { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/unnamed-rvbAHGzaRHzwRIyTNe6P8uwmJhHh4A.jpg", h: "row-span-2" },
     { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/unnamed-3-X6ZH3mQfDSTYD4MRbCgNik7iAnYg1w.jpg", h: "" },
   ];
   return (
