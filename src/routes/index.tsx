@@ -87,7 +87,7 @@ function Nav() {
           </div>
         </a>
         <nav className="hidden items-center gap-8 text-sm text-white/70 md:flex">
-          {[["About","about"],["Services","services"],["Process","process"],["Reviews","reviews"],["Calculator","calculator"],["Contact","contact"]].map(([l,h])=>(
+          {[["About","about"],["Services","services"],["Process","process"],["Reviews","reviews"],["Contact","contact"]].map(([l,h])=>(
             <a key={h} href={`#${h}`} className="transition-colors hover:text-white">{l}</a>
           ))}
         </nav>
@@ -101,7 +101,7 @@ function Hero() {
   return (
     <section id="top" className="relative min-h-[100svh] overflow-hidden pt-24">
       <div className="absolute inset-0">
-        <img src={heroImg} alt="Personal trainer in Bangalore" className="h-full w-full object-cover object-top" width={1600} height={1808} />
+        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/unnamed-3-24nxlEpWkg87JLb0TLetXnhMkxzq74.jpg" alt="Personal trainer in Bangalore" className="h-full w-full object-cover object-center" width={1600} height={1808} />
         <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent" />
       </div>
@@ -340,10 +340,10 @@ function Reviews() {
 
 function Gallery() {
   const imgs = [
-    { src: trainerFlex.url, h: "row-span-2" },
+    { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/unnamed-4-Yz1GA0e5uRV7SM1sI73BDHGOKT78SW.jpg", h: "row-span-2" },
     { src: g1, h: "" },
     { src: g3, h: "" },
-    { src: trainerGym.url, h: "row-span-2" },
+    { src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/unnamed-5-zOtONre1aPXSm6fA2XjbNfjLqJGCCA.jpg", h: "row-span-2" },
     { src: g6, h: "" },
     { src: g4, h: "" },
     { src: g5, h: "" },
@@ -369,103 +369,7 @@ function Gallery() {
   );
 }
 
-function Calculator() {
-  const [height, setHeight] = useState(170);
-  const [weight, setWeight] = useState(70);
-  const [age, setAge] = useState(28);
-  const [gender, setGender] = useState<"male" | "female">("male");
-  const [activity, setActivity] = useState(1.55);
 
-  const results = useMemo(() => {
-    const h = Number(height), w = Number(weight), a = Number(age);
-    const bmi = w / ((h / 100) ** 2);
-    const bmr = gender === "male" ? 10 * w + 6.25 * h - 5 * a + 5 : 10 * w + 6.25 * h - 5 * a - 161;
-    const maint = Math.round(bmr * activity);
-    return {
-      bmi: isFinite(bmi) ? bmi.toFixed(1) : "—",
-      maint, loss: Math.round(maint - 500), gain: Math.round(maint + 400),
-    };
-  }, [height, weight, age, gender, activity]);
-
-  const bmiLabel = (() => {
-    const v = parseFloat(results.bmi);
-    if (isNaN(v)) return "";
-    if (v < 18.5) return "Underweight";
-    if (v < 25) return "Normal";
-    if (v < 30) return "Overweight";
-    return "Obese";
-  })();
-
-  const inputCls = "w-full rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-white outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/30";
-  const Field = ({ label, children }: { label: string; children: React.ReactNode }) => (
-    <label className="block">
-      <div className="mb-2 text-xs font-medium uppercase tracking-widest text-white/50">{label}</div>
-      {children}
-    </label>
-  );
-
-  return (
-    <Section id="calculator">
-      <div className="text-center" data-reveal>
-        <Eyebrow>Free Tool</Eyebrow>
-        <h2 className="font-display text-4xl leading-tight sm:text-5xl md:text-6xl">
-          BMI & Calorie <span className="text-primary">Calculator</span>
-        </h2>
-        <p className="mx-auto mt-4 max-w-xl text-white/60">
-          Get an instant read on where you are — and how much you should eat to hit your goal.
-        </p>
-      </div>
-      <div className="mt-12 grid gap-6 lg:grid-cols-[1.05fr_1fr]">
-        <div data-reveal className="glass rounded-3xl p-6 sm:p-8">
-          <div className="grid gap-5 sm:grid-cols-2">
-            <Field label="Height (cm)"><input type="number" value={height} onChange={(e) => setHeight(+e.target.value)} className={inputCls} /></Field>
-            <Field label="Weight (kg)"><input type="number" value={weight} onChange={(e) => setWeight(+e.target.value)} className={inputCls} /></Field>
-            <Field label="Age"><input type="number" value={age} onChange={(e) => setAge(+e.target.value)} className={inputCls} /></Field>
-            <Field label="Gender">
-              <div className="grid grid-cols-2 gap-2">
-                {(["male","female"] as const).map((g) => (
-                  <button key={g} onClick={() => setGender(g)} className={`rounded-xl border px-4 py-3 text-sm font-medium capitalize transition ${gender === g ? "border-primary bg-primary/10 text-white" : "border-white/10 bg-white/[0.03] text-white/60 hover:text-white"}`}>{g}</button>
-                ))}
-              </div>
-            </Field>
-            <div className="sm:col-span-2">
-              <Field label="Activity Level">
-                <select value={activity} onChange={(e) => setActivity(+e.target.value)} className={inputCls}>
-                  <option value={1.2}>Sedentary (little/no exercise)</option>
-                  <option value={1.375}>Lightly active (1–3 days/week)</option>
-                  <option value={1.55}>Moderately active (3–5 days/week)</option>
-                  <option value={1.725}>Very active (6–7 days/week)</option>
-                  <option value={1.9}>Extra active (physical job / 2x day)</option>
-                </select>
-              </Field>
-            </div>
-          </div>
-        </div>
-        <div data-reveal className="grid gap-4">
-          <div className="glass rounded-3xl p-6">
-            <div className="text-xs uppercase tracking-widest text-white/50">Your BMI</div>
-            <div className="mt-2 flex items-end gap-3">
-              <div className="font-display text-6xl text-white">{results.bmi}</div>
-              <div className="mb-2 rounded-full bg-primary/15 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-primary">{bmiLabel}</div>
-            </div>
-          </div>
-          <div className="grid grid-cols-3 gap-3">
-            {[{l:"Maintain",v:results.maint},{l:"Fat loss",v:results.loss},{l:"Muscle gain",v:results.gain}].map((c) => (
-              <div key={c.l} className="glass rounded-2xl p-4 text-center">
-                <div className="text-[10px] uppercase tracking-widest text-white/50">{c.l}</div>
-                <div className="mt-1 font-display text-2xl text-white">{c.v.toLocaleString()}</div>
-                <div className="text-[10px] text-white/40">kcal / day</div>
-              </div>
-            ))}
-          </div>
-          <a href="#contact" className="btn-primary inline-flex items-center justify-center gap-2 rounded-2xl px-6 py-4 text-sm font-semibold uppercase tracking-wider">
-            Get a plan built for these numbers <ArrowRight className="h-4 w-4" />
-          </a>
-        </div>
-      </div>
-    </Section>
-  );
-}
 
 const FAQS = [
   { q: "Do you train beginners?", a: "Absolutely. Most clients start as complete beginners. Every plan begins with a proper assessment so training matches your current level and progresses safely." },
@@ -600,7 +504,7 @@ function Footer() {
           </p>
         </div>
         <div className="grid grid-cols-2 gap-4 text-sm">
-          {["About","Services","Process","Reviews","Calculator","FAQ","Contact"].map((l) => (
+          {["About","Services","Process","Reviews","FAQ","Contact"].map((l) => (
             <a key={l} href={`#${l.toLowerCase()}`} className="text-white/60 transition hover:text-white">{l}</a>
           ))}
         </div>
@@ -631,7 +535,6 @@ function Index() {
       <Process />
       <Reviews />
       <Gallery />
-      <Calculator />
       <FAQ />
       <FinalCTA />
       <Contact />
